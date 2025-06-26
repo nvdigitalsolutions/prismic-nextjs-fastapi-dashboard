@@ -95,6 +95,7 @@ Before running this project, you’ll need the following accounts:
 ### Project Structure
 
 ├── backend/
+
 │   ├── app/
 │   ├── main.py
 │   ├── requirements.txt
