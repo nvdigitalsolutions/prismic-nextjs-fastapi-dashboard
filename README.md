@@ -27,22 +27,39 @@ Before running this project, you’ll need the following accounts:
      - **API endpoint** (e.g. `https://your-repo-name.cdn.prismic.io/api/v2`)
      - **Access Token** (create a permanent token).
 
-3. **Vercel** (Frontend Hosting)
-   - Sign up at https://vercel.com/ (or use your GitHub login).
-   - Import the GitHub repo you created.
-   - Under **Project Settings > Environment Variables**, add:
-     - `PRISMIC_REPO_NAME` = your-prismic-repo-name
-     - `PRISMIC_ACCESS_TOKEN` = the token from Prismic
-     - `NEXT_PUBLIC_API_URL` = `https://<your-vercel-domain>/api`
+3. **Frontend Hosting**
+   - **Vercel**
+     - Sign up at https://vercel.com/ (or use your GitHub login).
+     - Import the GitHub repository.
+     - Under **Project Settings > Environment Variables**, add:
+       - `PRISMIC_REPO_NAME` = your-prismic-repo-name
+       - `PRISMIC_ACCESS_TOKEN` = the token from Prismic
+       - `NEXT_PUBLIC_API_URL` = `https://<your-vercel-domain>/api`
+   - **DigitalOcean App Platform**
+     - Sign up at https://www.digitalocean.com/.
+     - Create a **New App**.
+     - Connect your GitHub repo and select the `frontend` directory.
+     - In **Build & Deploy** settings:
+       - **Build Command**: `npm install && npm run build`
+       - **Output Directory**: `.next`
+       - **Run Command**: `npm start`
+     - Under **Environment Variables**, add:
+       - `PRISMIC_REPO_NAME` = your-prismic-repo-name
+       - `PRISMIC_ACCESS_TOKEN` = the token from Prismic
+       - `NEXT_PUBLIC_API_URL` = `https://<your-app>.ondigitalocean.app/api`
+     - Choose your region and click **Create App**.
 
-4. **Backend Hosting** (e.g., Railway, Heroku, or any FastAPI-friendly host)
-   - Sign up for your chosen platform.
-   - Create a new project/app, and link your GitHub backend folder or deploy via CLI.
-   - Configure environment variables:
+4. **Backend Hosting**
+   - Sign up for your chosen FastAPI-friendly platform (Railway, Heroku, or DigitalOcean App Platform).
+   - Create a new project/app and connect the `backend` folder from your repo.
+   - Configure **Environment Variables**:
      - `DATABASE_URL` = your database connection string (e.g. `postgres://...` or SQLite file URL)
      - `SECRET_KEY` = a long random string (for JWT signing)
      - `ALGORITHM` = `HS256`
      - `ACCESS_TOKEN_EXPIRE_MINUTES` = `30`
+   - For DigitalOcean App Platform backend component:
+     - **Run Command**: `uvicorn main:app --host 0.0.0.0 --port 8000 --reload`
+     - Choose a region and **Create App**.
 
 5. **Optional: Custom Domain**
    - On Vercel, add a custom domain under **Domains** and follow DNS instructions.
