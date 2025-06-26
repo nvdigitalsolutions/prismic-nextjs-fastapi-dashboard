@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "projects": {
+    "dashboard": {
+      "root": "frontend"
+    }
+  },
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/../backend/$1" }
+  ]
+}
