@@ -97,6 +97,11 @@ Before running this project, you’ll need the following accounts:
    ```bash
    npm run dev
    ```
+6. To build for production, run:
+   ```bash
+   npm run build
+   ```
+   This automatically installs dependencies if they aren't already installed.
 
 ### Project Structure
 
