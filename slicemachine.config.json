@@ -1,0 +1,7 @@
+{
+  "repositoryName": "prismic-nextjs-fastapi-dashboard",
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": ["./src/slices"],
+  "localSliceSimularotURL": "http://localhost:3000/slice-simpulator",
+  "apiEndpoint": ""
+}
