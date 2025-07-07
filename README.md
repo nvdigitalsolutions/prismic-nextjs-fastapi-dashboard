@@ -75,6 +75,7 @@ Before running this project, you’ll need the following accounts:
    ```bash
    pip install -r requirements.txt
    ```
+   The requirements now include `psycopg2-binary` so Postgres databases work out of the box.
 4. Run:
    ```bash
    uvicorn main:app --reload
