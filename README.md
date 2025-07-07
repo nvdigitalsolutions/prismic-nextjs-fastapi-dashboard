@@ -84,11 +84,15 @@ Before running this project, you’ll need the following accounts:
 ### Frontend
 
 1. Navigate to `frontend/`
-2. Install dependencies:
+2. If you haven't already initialized Prismic, run:
+   ```bash
+   npx @slicemachine/init@latest --repository prismic-nextjs-fastapi-dashboard --starter nextjs-starter-prismic-minimal
+   ```
+3. Install dependencies:
    ```bash
    npm install
    ```
-3. Run:
+4. Run:
    ```bash
    npm run dev
    ```
