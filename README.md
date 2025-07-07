@@ -22,9 +22,9 @@ Before running this project, you’ll need the following accounts:
 2. **Prismic CMS**
    - Sign up at https://prismic.io/.
    - From the dashboard, select **New repository**.
-   - Give it a name (e.g. `your-repo-name`) and choose any starter kit.
+   - Give it the name `prismic-nextjs-fastapi-dashboard` and choose any starter kit.
    - Go to **Settings > API & Security** and note:
-     - **API endpoint** (e.g. `https://your-repo-name.cdn.prismic.io/api/v2`)
+     - **API endpoint**: `https://prismic-nextjs-fastapi-dashboard.prismic.io/api/v2`
      - **Access Token** (create a permanent token).
 
 3. **Frontend Hosting**
@@ -32,7 +32,7 @@ Before running this project, you’ll need the following accounts:
      - Sign up at https://vercel.com/ (or use your GitHub login).
      - Import the GitHub repository.
      - Under **Project Settings > Environment Variables**, add:
-       - `PRISMIC_REPO_NAME` = your-prismic-repo-name
+       - `PRISMIC_REPO_NAME` = prismic-nextjs-fastapi-dashboard
        - `PRISMIC_ACCESS_TOKEN` = the token from Prismic
        - `NEXT_PUBLIC_API_URL` = `https://<your-vercel-domain>/api`
    - **DigitalOcean App Platform**
@@ -44,7 +44,7 @@ Before running this project, you’ll need the following accounts:
        - **Output Directory**: `.next`
        - **Run Command**: `npm start`
      - Under **Environment Variables**, add:
-       - `PRISMIC_REPO_NAME` = your-prismic-repo-name
+       - `PRISMIC_REPO_NAME` = prismic-nextjs-fastapi-dashboard
        - `PRISMIC_ACCESS_TOKEN` = the token from Prismic
        - `NEXT_PUBLIC_API_URL` = `https://<your-app>.ondigitalocean.app/api`
      - Choose your region and click **Create App**.
@@ -88,11 +88,12 @@ Before running this project, you’ll need the following accounts:
    ```bash
    npx @slicemachine/init@latest --repository prismic-nextjs-fastapi-dashboard --starter nextjs-starter-prismic-minimal
    ```
-3. Install dependencies:
+3. Copy `.env.example` to `.env` and fill in your Prismic credentials.
+4. Install dependencies:
    ```bash
    npm install
    ```
-4. Run:
+5. Run:
    ```bash
    npm run dev
    ```
