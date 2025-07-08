@@ -1,0 +1,24 @@
+{
+  "id": "settings",
+  "label": "Settings",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "header": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Header Content",
+          "multi": "heading1, heading2, paragraph, preformatted, strong, em, hyperlink, list-item, o-list-item"
+        }
+      },
+      "footer": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Footer Content",
+          "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item"
+        }
+      }
+    }
+  }
+}
