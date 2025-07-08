@@ -12,11 +12,49 @@
           "multi": "heading1, heading2, paragraph, preformatted, strong, em, hyperlink, list-item, o-list-item"
         }
       },
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo"
+        }
+      },
+      "nav_links": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "label": {
+              "type": "Text",
+              "config": {
+                "label": "Label"
+              }
+            },
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link"
+              }
+            }
+          },
+          "label": "Navigation Links"
+        }
+      },
       "footer": {
         "type": "StructuredText",
         "config": {
           "label": "Footer Content",
           "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item"
+        }
+      },
+      "button_label": {
+        "type": "Text",
+        "config": {
+          "label": "Button Label"
+        }
+      },
+      "button_link": {
+        "type": "Link",
+        "config": {
+          "label": "Button Link"
         }
       }
     }
