@@ -2,7 +2,7 @@ import { client } from '../lib/prismic'
 
 export async function getStaticProps() {
   try {
-    const page = await client.getSingle('homepage')
+    const page = await client.getByUID('page', 'hompage')
     return { props: { page } }
   } catch (error) {
     // Gracefully handle missing Prismic content to prevent build failures
