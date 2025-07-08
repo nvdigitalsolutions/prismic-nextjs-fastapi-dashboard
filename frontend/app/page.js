@@ -3,7 +3,7 @@ import { client } from '../lib/prismic'
 export default async function Page() {
   let page = null
   try {
-    page = await client.getSingle('homepage')
+    page = await client.getByUID('page', 'hompage')
   } catch (error) {
     // ignore errors and show fallback
   }
