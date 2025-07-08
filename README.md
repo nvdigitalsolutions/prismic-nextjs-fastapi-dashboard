@@ -123,3 +123,12 @@ Before running this project, you’ll need the following accounts:
 
 - Frontend on Vercel (auto from `frontend/`).
 - Backend on any FastAPI-friendly host.
+
+### Development
+
+Run the API and frontend together during development:
+
+```bash
+uvicorn backend.main:app --reload &
+npm --prefix frontend run dev
+```
