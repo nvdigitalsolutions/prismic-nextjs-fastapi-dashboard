@@ -111,7 +111,7 @@ Before running this project, you’ll need the following accounts:
 │   ├── requirements.txt
 │   └── .env.example
 ├── frontend/
-│   ├── pages/
+│   ├── app/
 │   ├── lib/
 │   ├── styles/
 │   ├── package.json
