@@ -1,4 +1,5 @@
 import { client } from '../lib/prismic'
+import { asText } from '@prismicio/client'
 
 export async function getStaticProps() {
   try {
@@ -14,7 +15,7 @@ export default function Home({ page }) {
   return (
     <div className="h-screen flex items-center justify-center">
       <h1 className="text-4xl font-bold">
-        {page ? page.data.title : 'Prisim Not Connected'}
+        {page ? asText(page.data.title) : 'Prismic Not Connected'}
       </h1>
     </div>
   )
