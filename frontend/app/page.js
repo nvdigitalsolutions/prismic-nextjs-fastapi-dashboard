@@ -1,5 +1,6 @@
 import { client } from '../lib/prismic'
-import { asText } from '@prismicio/client'
+import { SliceZone } from '@prismicio/react'
+import RichText from '../components/RichText'
 
 export default async function Page() {
   let page = null
@@ -8,12 +9,17 @@ export default async function Page() {
   } catch (error) {
     // ignore errors and show fallback
   }
+  if (!page) {
+    return (
+      <div className="h-screen flex items-center justify-center">
+        <h1 className="text-4xl font-bold">Prismic Not Connected</h1>
+      </div>
+    )
+  }
 
-  return (
-    <div className="h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">
-        {page ? asText(page.data.title) : 'Prismic Not Connected'}
-      </h1>
-    </div>
-  )
+  const components = {
+    rich_text: RichText,
+  }
+
+  return <SliceZone slices={page.data.slices} components={components} />
 }
