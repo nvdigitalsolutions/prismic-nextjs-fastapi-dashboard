@@ -6,3 +6,7 @@ python-dotenv
 PyJWT
 python-multipart
 psycopg2-binary
+passlib[bcrypt]
+pytest
+flake8
+httpx
