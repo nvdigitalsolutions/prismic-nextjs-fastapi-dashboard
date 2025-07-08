@@ -103,6 +103,15 @@ Before running this project, you’ll need the following accounts:
    ```
    This automatically installs dependencies if they aren't already installed.
 
+### Settings Custom Type
+
+Global header and footer content is managed through a Prismic custom type named
+`settings`. The schema lives at
+`frontend/prismic-nextjs-fastapi-dashboard/customtypes/settings/index.json`.
+After creating or modifying this type in Slice Machine, push it to Prismic so
+the fields are available in the CMS. The Next.js layout fetches this document
+and passes the data to the `Header` and `Footer` components.
+
 ### Project Structure
 
 ├── backend/
