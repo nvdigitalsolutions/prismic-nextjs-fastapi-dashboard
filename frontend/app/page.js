@@ -1,4 +1,5 @@
 import { client } from '../lib/prismic'
+import { asText } from '@prismicio/client'
 
 export default async function Page() {
   let page = null
@@ -11,7 +12,7 @@ export default async function Page() {
   return (
     <div className="h-screen flex items-center justify-center">
       <h1 className="text-4xl font-bold">
-        {page ? page.data.title : 'Prisim Not Connected'}
+        {page ? asText(page.data.title) : 'Prismic Not Connected'}
       </h1>
     </div>
   )
