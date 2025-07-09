@@ -1,10 +1,11 @@
-import { client } from '../lib/prismic'
+import { getClient } from '../lib/prismic'
 import { SliceZone } from '@prismicio/react'
 import RichText from '../components/RichText'
 
 export default async function Page() {
   let page = null
   try {
+    const client = getClient()
     page = await client.getByUID('page', 'home')
   } catch (error) {
     // ignore errors and show fallback

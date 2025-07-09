@@ -10,3 +10,4 @@ passlib[bcrypt]
 pytest
 flake8
 httpx
+slowapi
