@@ -1,9 +1,10 @@
-import { client } from '../lib/prismic'
+import { getClient } from '../lib/prismic'
 import { SliceZone } from '@prismicio/react'
 import RichText from '../components/RichText'
 
 export async function getStaticProps() {
   try {
+    const client = getClient()
     const page = await client.getByUID('page', 'home')
     return { props: { page } }
   } catch (error) {

@@ -32,8 +32,8 @@ Before running this project, you’ll need the following accounts:
      - Sign up at https://vercel.com/ (or use your GitHub login).
      - Import the GitHub repository.
      - Under **Project Settings > Environment Variables**, add:
-       - `PRISMIC_REPO_NAME` = prismic-nextjs-fastapi-dashboard
-       - `PRISMIC_ACCESS_TOKEN` = the token from Prismic
+      - `PRISMIC_REPO_NAME` = prismic-nextjs-fastapi-dashboard
+      - `PRISMIC_ACCESS_TOKEN` = the token from Prismic (used only server-side)
        - `NEXT_PUBLIC_API_URL` = `https://<your-vercel-domain>/api`
    - **DigitalOcean App Platform**
      - Sign up at https://www.digitalocean.com/.
@@ -44,8 +44,8 @@ Before running this project, you’ll need the following accounts:
        - **Output Directory**: `.next`
        - **Run Command**: `npm start`
      - Under **Environment Variables**, add:
-       - `PRISMIC_REPO_NAME` = prismic-nextjs-fastapi-dashboard
-       - `PRISMIC_ACCESS_TOKEN` = the token from Prismic
+      - `PRISMIC_REPO_NAME` = prismic-nextjs-fastapi-dashboard
+      - `PRISMIC_ACCESS_TOKEN` = the token from Prismic (used only server-side)
        - `NEXT_PUBLIC_API_URL` = `https://<your-app>.ondigitalocean.app/api`
      - Choose your region and click **Create App**.
 
@@ -56,7 +56,8 @@ Before running this project, you’ll need the following accounts:
      - `DATABASE_URL` = your database connection string (e.g. `postgres://...` or SQLite file URL)
      - `SECRET_KEY` = a long random string (for JWT signing)
      - `ALGORITHM` = `HS256`
-     - `ACCESS_TOKEN_EXPIRE_MINUTES` = `30`
+    - `ACCESS_TOKEN_EXPIRE_MINUTES` = `30`
+    - `CORS_ORIGINS` = comma separated list of allowed origins
    - For DigitalOcean App Platform backend component:
      - **Run Command**: `uvicorn main:app --host 0.0.0.0 --port 8000 --reload`
      - Choose a region and **Create App**.

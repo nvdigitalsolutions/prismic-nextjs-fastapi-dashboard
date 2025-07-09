@@ -1,8 +1,9 @@
 import Script from 'next/script'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { client } from '../lib/prismic'
+import { getClient } from '../lib/prismic'
 export default async function RootLayout({ children }) {
+  const client = getClient()
   const settings = await client.getSingle('settings').catch(() => null)
   return (
     <html lang="en">
